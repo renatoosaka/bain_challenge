@@ -158,6 +158,9 @@ In order to develop the working prototype, I believe it will be necessary to dev
 - Database: The database will be responsible for storing all the system's information,.
 - Messaging: Messaging will be responsible for all communication between the systems.
 
+  ![napkin-selection](https://github.com/user-attachments/assets/146eb5ba-8659-404c-9745-d8ee66aa5814)
+
+
 **Question #2**
 
 > 2. Tell us about the type of architecture you chose for question (1). Monolithic? Micro-services? Any intermediate? Other? Comment on what you based to make this decision.
