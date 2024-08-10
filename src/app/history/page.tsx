@@ -24,9 +24,9 @@ export default async function Page() {
   );
 
   return (
-    <main className="flex flex-col items-center justify-start max-w-6xl w-full h-full">
+    <main className="flex flex-col items-center justify-start max-w-6xl w-full h-full px-2 md:px-4">
       <h1 className="text-2xl font-bold leading-relaxed">History</h1>
-      <section className="grid grid-cols-4 items-center mt-4 w-full gap-2">
+      <section className="grid grid-cols-1 items-center mt-4 w-full gap-2 md:grid-cols-4">
         {rs.rows.map((row) => (
           <div
             key={row.id?.toString()}

@@ -13,7 +13,7 @@ export default function Navbar() {
       <div className="max-w-6xl w-full p-4 mx-auto bg-transparent flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
           <MapTrifold size={40} />
-          <span className="text-lg font-bold leading-relaxed">
+          <span className="md:text-lg font-bold leading-relaxed">
             Bain Delivery
           </span>
         </Link>
