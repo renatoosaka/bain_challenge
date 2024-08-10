@@ -23,10 +23,7 @@ export function Form() {
 
   return (
     <>
-      <form
-        className="flex flex-col gap-4 my-16 w-80"
-        action={handleformAction}
-      >
+      <form className="flex flex-col gap-4 my-8 w-80" action={handleformAction}>
         <input
           type="text"
           className="px-4 py-2 border border-gray-300 rounded"

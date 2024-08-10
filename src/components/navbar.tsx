@@ -9,7 +9,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="shadow-md mb-4 sticky top-0 bg-sky-100">
+    <nav className="shadow mb-4 sticky top-0 bg-sky-100">
       <div className="max-w-6xl w-full p-4 mx-auto bg-transparent flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
           <MapTrifold size={40} />

@@ -32,13 +32,15 @@ export default async function Page() {
             key={row.id?.toString()}
             className="flex flex-col border border-zinc-300 rounded p-4 w-full gap-2"
           >
-            <div className="font-semibold flex gap-1 text-sm">
+            <div className="font-semibold flex gap-1 text-sm items-center justify-between">
               {row.source?.toString()}
               <Image src={flowArrow} alt="flow arrow" width={16} height={16} />
               {row.destination?.toString()}
             </div>
             <div className="flex justify-between items-center">
-              <p>{Number(row.distance?.toString()).toFixed(2)} km</p>
+              <p className="text-sm">
+                {Number(row.distance?.toString()).toFixed(2)} km
+              </p>
               <small className="text-xs">
                 {dayjs(row.created_at?.toString())
                   .utc(true)
