@@ -10,7 +10,7 @@ URL for online web app: [https://bain-challenge-eight.vercel.app/](https://bain-
 
 - Calculating Distance:
 
-  The application calculates the as the crow flies distance using the Haversine formula. This formula determines the shortest distance between two points on a sphere, measured along the surface of the sphere. For more information, you can refer to the [Wikipedia article on the Haversine formula](https://en.wikipedia.org/wiki/Haversine_formula). Credit for Harversine formula implementation on JavaScript [medium article](https://henry-rossiter.medium.com/calculating-distance-between-geographic-coordinates-with-javascript-5f3097b61898).
+  The application calculates the distance using the Haversine formula. This formula determines the shortest distance between two points on a sphere, measured along the surface of the sphere. For more information, you can refer to the [Wikipedia article on the Haversine formula](https://en.wikipedia.org/wiki/Haversine_formula). Credit for Harversine formula implementation on JavaScript [medium article](https://henry-rossiter.medium.com/calculating-distance-between-geographic-coordinates-with-javascript-5f3097b61898).
 
 - History:
 
