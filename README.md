@@ -145,70 +145,62 @@ docker logs bain_challenge
 
 ## Questions
 
-**Question #1**
-
 > 1. Tell us what pieces of software you think are necessary to develop for the working prototype and how they are related. We call each application (web, mobile or desktop), each API, each batch process that can be deployed independently a piece of software. Support yourself with a diagram if you think necessary.
 
-**Answer**
+For the prototype we will use a monolith, where we will have a Web Application Firewall (WAF), Load Balancer (LB), the application instances, and finally the database.
 
-In order to develop the working prototype, I believe it will be necessary to develop 3 pieces of software:
-
-- Frontend: The frontend will be responsible for all user interaction with the system.
-- Backend: The backend will be responsible for all the system's business logic.
-- Database: The database will be responsible for storing all the system's information,.
-- Messaging: Messaging will be responsible for all communication between the systems.
-
-  ![napkin-selection](https://github.com/user-attachments/assets/146eb5ba-8659-404c-9745-d8ee66aa5814)
-
-
-**Question #2**
+For the second phase of the project, we'll adopt a microservices architecture, where we'll have a Web Application Firewall (WAF), Load Balancer (LB), at first the Order, Delivery, Payment and KDS microservices and the database.
 
 > 2. Tell us about the type of architecture you chose for question (1). Monolithic? Micro-services? Any intermediate? Other? Comment on what you based to make this decision.
 
-**Answer**
+For the first phase of the project (prototype), we're going to use a monolithic approach, which will save time in the development and actual testing of the project. As it has a simpler deployment and development than a microservices architecture, we'll have a reduced architecture cost and we'll be able to get the project online in a short time, so we'll have data to analyze the project's acceptance and direction.
+In this structure we will have the security layer, load balancer, application containers and the database.
 
-For the development of the working prototype, I believe that the best architecture to use is the micro-services architecture, because with this architecture we can have greater flexibility and scalability, and with this we can develop faster and with higher quality.
-At first we can start with a less complex approach, with a few micro-services, and over time we can evolve and add more micro-services as the project requires.
-In this way we can have teams working independently, with the programming language that best suits each micro-service, and with this we can achieve faster and higher quality development.
-
-**Question #3**
+After the prototype phase and the success of the project, we can identify which parts of the project (services) require the most processing, at which times we have the most demand and the stress load, so we can start planning and adopting a microservices architecture.
+Among the services we can first identify Order, Delivery, Payment, KDS.
 
 > 3. Describe the work methodology you would use for development. It can be some known methodology (Scrum, XP, RUP), an adaptation, or a mixture between several methodologies. Whatever your experience has shown you works. Tell us why you think this form is appropriate for our problem.
 
-**Answer**
+I would recommend using the Scrum methodology, as it provides a structured yet flexible framework for managing development. Key practices include daily stand-ups, two-week sprints, and regular planning, review, and retrospective meetings.
 
-I recommend using the Scrum methodology following certain rites such as daily meetings, 2 weeks sprint, planning, review and retrospective.
-With this methodology we are able to closely monitor what is being done on the project, and with this we are able to identify where to direct the work effort, identifying where we can add the most value to the project and the client.
-
-**Question #4**
+This approach allows the team to closely track progress and adapt quickly to any changes or challenges that arise. By breaking down the work into manageable sprints, we can prioritize tasks effectively and focus on delivering the highest value to the project and the client. The regular feedback loops also help ensure continuous improvement and alignment with project goals.
 
 > 4. Describe the workflow you would use to collaborate using Git. As with (3), you can use something familiar or an adaptation.
 
-**Answer**
+For collaboration using Git, I would recommend using the Gitflow workflow with some adaptations to suit the team's needs.
 
-We're going to follow the Git Flow pattern, we'll have the main branch for all the productive code, the staging branch which will be the final validation environment before sending it to the productive environment and finally the development environment, develop, where the releases to be developed will be integrated.
-environment, where the releases to be developed will be integrated.
-Each release will have a specific branch which, when finished, will be integrated into develop to validate the integration with all the code that is still in development, and after validation will be integrated into the staging branch for final validation.
-Hotfixes will be dealt with directly in the main branch and after correction will be integrated into the staging and develop branches.
+- Main Branches:
 
-**Question #5**
+  - main branch: This branch contains the production-ready code. It only receives changes from the develop branch when a feature is fully tested and ready for release.
+  - develop branch: This branch is the integration branch for features. All new feature branches are merged into develop, where integration and testing happen before moving to main.
+
+- Supporting Branches:
+
+  - Feature branches: For each new feature or task, a new branch is created from develop. The naming convention is typically feature/feature-name, which helps in keeping track of what's being worked on.
+  - Hotfix branches: In case of a bug found in production, a hotfix branch is created from main. After the fix is made, it's merged back into both main and develop to ensure the issue is resolved in both production and ongoing development.
+    Release branches: When the develop branch is ready for a new release, a release branch is created. This branch is used for final testing and polishing before merging into main and tagging a new release.
+
+- Collaboration Workflow:
+  - Pull Requests (PRs): All changes should be submitted via pull requests. This allows for code review, discussion, and approval before merging into develop or main. PRs should be small and focused to keep the review process efficient.
+  - Code Reviews: Every PR should be reviewed by at least one other team member. This ensures that code quality is maintained and allows for knowledge sharing across the team.
+  - Continuous Integration (CI): Automated tests should be run on every PR and before merging into the develop or main branches. This helps catch issues early and ensures that the codebase remains stable.
+  - Branch Protection Rules: To enforce this workflow, branch protection rules can be applied to the main and develop branches, requiring PRs and passing tests before any changes can be merged.
+
+This Gitflow-inspired workflow ensures that development is organized, collaboration is smooth, and the codebase remains stable, allowing us to deliver high-quality software efficiently.
 
 > 5. Do you think it is necessary to add any extra member to the team during the development of the prototype? What would your role be? Do you think it would be necessary to add new members after the prototype phase? When and why?
 
-**Answer**
-
-For this first phase of the project, I don't think it's necessary to add new members; I believe that with the current team we can deliver the project with quality and on time.
-After the prototyping phase, I believe it is necessary to add a member to the development team, so that we can have a faster and higher quality development, and a member to the testing team, so that we can guarantee the quality of the project.
-It is also important to add a member to the DevOps team, so that we can have a more stable and secure development and production environment, and another very important member that should be present from the start is the QA to carry out more advanced tests.
-
-**Question #6**
+For the first phase of the project, I would add a quality tester to carry out all the advanced tests and also a UI/UX specialist to provide the best possible user experience.
+Once we've moved on to the next phase where we've decided to take the project forward, we'll need to add another developer and a person who specializes in architecture/devops to ensure the success of our microservices.
 
 > 6. What other considerations would you have to make the development process robust and efficient?
 
-**Answer**
+To make the development process robust and efficient, I’d focus on a few key areas:
 
-To make the development process more robust and efficient, it is important that we have a well-defined and stable development and production environment, so that we can guarantee that the code being developed is being tested in an environment that is as close as possible to the production environment.
-It is also important that we have an automated testing environment, so that we can guarantee the quality of the code being developed, and thereby ensure that the code being developed is being tested efficiently and quickly.
-Another important point is the documentation of the code. It is important that we have clear and objective documentation, so that we can guarantee that the code being developed is being documented correctly and efficiently.
-It is also important that we have a continuous integration environment, so that we can ensure that the code being developed is being integrated efficiently and quickly, and thereby ensure that the code being developed is being integrated efficiently and quickly.
-Finally, it is important that we have a monitoring environment, so that we can ensure that the code that is being developed is being monitored efficiently and quickly, and thereby ensure that the code that is being developed is being monitored efficiently and quickly.
+- Automated Testing: Set up automated tests to catch bugs early and ensure the code works as expected. This includes unit, integration, and end-to-end tests.
+- CI/CD: Implement continuous integration and continuous deployment pipelines so that every code change is tested, validated, and automatically deployed if it passes. This speeds up delivery and reduces errors.
+- Code Quality: Regular code reviews help maintain quality and share knowledge within the team. Tools for consistent coding styles and good documentation are also crucial.
+- Agile Practices: Follow agile practices like daily stand-ups, sprint planning, and retrospectives to keep the team aligned and the work organized.
+- Infrastructure and DevOps: Use infrastructure as code to ensure everything is consistent and reproducible. Monitoring and logging are essential for keeping track of the application's performance and health.
+- Security: Write secure code, conduct regular security audits, and keep dependencies up to date to protect the application.
+- These practices help create an efficient, secure, and reliable development process that consistently delivers high-quality software.
