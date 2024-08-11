@@ -149,7 +149,12 @@ docker logs bain_challenge
 
 For the prototype we will use a monolith, where we will have a Web Application Firewall (WAF), Load Balancer (LB), the application instances, and finally the database.
 
+![image](https://github.com/user-attachments/assets/45a5f782-1110-4eba-9e6a-2fba1bcb6464)
+
 For the second phase of the project, we'll adopt a microservices architecture, where we'll have a Web Application Firewall (WAF), Load Balancer (LB), at first the Order, Delivery, Payment and KDS microservices and the database.
+
+![image](https://github.com/user-attachments/assets/d4102e68-9d5a-4c02-866b-11b6ed0994c0)
+
 
 > 2. Tell us about the type of architecture you chose for question (1). Monolithic? Micro-services? Any intermediate? Other? Comment on what you based to make this decision.
 
